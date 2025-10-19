@@ -12,6 +12,15 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
 </servlet-mapping>
+
+<servlet>
+    <servlet-name>HomeServlet</servlet-name>
+    <servlet-class>controller.HomeServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>HomeServlet</servlet-name>
+    <url-pattern>/HomeServlet</url-pattern>
+</servlet-mapping>
     
     
 <servlet>
@@ -27,7 +36,7 @@
 
     <!-- Trang mặc định khi truy cập domain -->
     <welcome-file-list>
-        <welcome-file>login.html</welcome-file>
+        <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
     
 </web-app>
