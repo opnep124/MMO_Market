@@ -4,22 +4,30 @@
 	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	 xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
 	 version="6.0">
+<servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>controller.LoginServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+</servlet-mapping>
+    
+    
+<servlet>
+    <servlet-name>ProfileServlet</servlet-name>
+    <servlet-class>controller.ProfileServlet</servlet-class>
+</servlet>
 
-        <!-- Khai báo servlet -->
-    <servlet>
-        <servlet-name>UserListServlet</servlet-name>
-        <servlet-class>controller.UserListServlet</servlet-class>
-    </servlet>
+<servlet-mapping>
+    <servlet-name>ProfileServlet</servlet-name>
+    <url-pattern>/ProfileServlet</url-pattern>
+</servlet-mapping>
 
-    <!-- Đường dẫn truy cập servlet -->
-    <servlet-mapping>
-        <servlet-name>UserListServlet</servlet-name>
-        <url-pattern>/users</url-pattern>
-    </servlet-mapping>
 
     <!-- Trang mặc định khi truy cập domain -->
     <welcome-file-list>
-        <welcome-file>profile-info.html</welcome-file>
+        <welcome-file>login.html</welcome-file>
     </welcome-file-list>
     
 </web-app>
