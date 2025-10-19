@@ -86,7 +86,7 @@
 	line-height: 22px;
 	color: #6176FE;
 	padding: 16px 0px;
-	/* display: inline-block; */
+	 display: inline-block; 
 	width: 100%;
 	position: relative;
 	display: flex;
@@ -545,7 +545,7 @@
 	z-index: 5000;
 	background: #fff;
 }
-/* Chat Message */
+ Chat Message 
 .sherah-dropdown-card_list.sherah-chatbox__list li {
 	padding-left: 0;
 }
@@ -557,7 +557,7 @@
 	font-size: 14px;
 }
 
-/* Balance Hover */
+ Balance Hover 
 .sherah-header__amount {
   position: relative;
 }
@@ -681,7 +681,7 @@
 .sherah-dropdown-card-name a:hover {
 	color: #6176FE;
 }
-/* Notification Hover */
+ Notification Hover 
 .sherah-header__dropmenu:hover .sherah-dropdown-card {
 	opacity: 1;
 	visibility: visible;
@@ -731,7 +731,7 @@
 	line-height: 24px;
 }
 
-/* sherah Profile Hover */
+ sherah Profile Hover 
 .sherah-header__author:hover .sherah-dropdown-card__profile {
 	opacity: 1;
 	visibility: visible;
@@ -785,7 +785,7 @@
 .sherah-header__group .sherah-dropdown-card-name a {
 	font-weight: 400;
 }
-/* sherah Notification Single */
+ sherah Notification Single 
 .sherah-dropdown-card__alarm.all-notificaiton {
 	position: relative;
 	left: initial;
@@ -869,7 +869,7 @@
   background: #FDEFEF;
 }
 
-/* Single Notification */
+ Single Notification 
 .sherah-inner__heading {
 	display: flex;
 	justify-content: space-between;
@@ -1213,7 +1213,7 @@
 	}
 }
 
-/* Sidebar CSS */
+ Sidebar CSS 
 .sherah-sidebar{
 	position:sticky;
 	top:0;
@@ -1350,7 +1350,7 @@
 	font-size: 18px;
 	font-weight: 500;
   }
-/* Sidebar Dropdown Tabs */
+ Sidebar Dropdown Tabs 
 .sherah-sidebar_dropdown {
 	border: none;
 	padding: 0;
@@ -1394,7 +1394,7 @@
 .sherah-progress-inline__clist li span {
 	color: #2F3032;
 }
-/* Creator Lists */
+ Creator Lists 
 .sherah-sidebar__creatorlist li {
 	display: flex;
 	width: 100%;
@@ -1725,14 +1725,14 @@
 	
 	
 
-/*======================================
+======================================
    End Header & Sidebar CSS
-========================================*/
+========================================
 
-/*======================================
+======================================
    Widgets CSS
-========================================*/
-/* Chart JS */
+========================================
+ Chart JS 
 .sherah-charts-tabs__list {
   display: flex;
   flex-direction: row;
@@ -2081,7 +2081,7 @@
 }
 }
 
-/* Map CSS */
+ Map CSS 
 #sherah-map svg, #sherah-map .jvectormap-container {
 	min-height: 315px;
 	max-height: 315px;
@@ -2112,7 +2112,7 @@
 }
 }
 
-/* sherah Table */
+ sherah Table 
 .sherah-table {
 	padding: 30px;
 }
@@ -2496,7 +2496,7 @@
 	margin: 0;
   }
 
-/* Table Pagination*/
+ Table Pagination
 .dataTables_paginate,.sherah-pagination  {
 	text-align: center;
 	display: flex;
@@ -2690,13 +2690,13 @@
 	}
 }
 
-/*======================================
+======================================
    End Widgets CSS
-========================================*/
+========================================
 
-/*======================================
+======================================
 	Products CSS
-========================================*/
+========================================
 .sherah-products {
 	padding: 35px;
 	border-radius: 8px;
@@ -2771,7 +2771,7 @@
 .sherah-product-card__buttons--single.active .sherah-default__fill.sherah-default__heart{
 	stroke: #fff !important;
 }
-/* Sherah Product V2 */
+ Sherah Product V2 
 .sherah-product-card.sherah-product-card__v2 {
 	padding: 12px;
 }
@@ -2792,7 +2792,7 @@
 	opacity: 0.9 !important;
 }
 
-/* Sherah Sidebar */
+ Sherah Sidebar 
 .sherah-product-sidebar {
 	padding: 30px;
 	border-radius: 4px;
@@ -2959,7 +2959,7 @@
 }
 
 
-/* Product Details*/
+ Product Details
 
 .product-detail-body {
 	padding: 30px;
@@ -3142,7 +3142,7 @@
 	border: none;
   }
 
- /* Product Tab Overview */
+  Product Tab Overview 
 .sherah-product-tabs__list {
 	display: flex;
 	flex-direction: row;
@@ -3227,7 +3227,7 @@
   .sherah-wc__form-input.sherah-wc__form-input--big{
 	height: 225px;
   }
-  /* Upload Form */
+   Upload Form 
   .product-form-box {
 	padding: 30px;
 	border-radius: 4px;
@@ -3345,14 +3345,14 @@
 		padding: 0;
 	}
   }
-/*======================================
+======================================
 	End Products CSS
-========================================*/
+========================================
 
-/*======================================
+======================================
 	Chat & Email CSS
-========================================*/
-/* Chat Box */
+========================================
+ Chat Box 
 .sherah-chatbox__one {
 	width: 31%;
 }
@@ -3902,7 +3902,7 @@
 	color: #9AA2B1;
 }
 
-/* Chat Inbox Header */
+ Chat Inbox Header 
 .sherah-chatbox__header {
 	background: #E4F2FF;
 	border-radius: 11px 11px 0px 0px;
@@ -4087,7 +4087,7 @@
 	padding: 0 25px;
 }
 
-/* sherah Ticket Card */
+ sherah Ticket Card 
 .sherah-ticket-card {
 	padding: 25px 25px 0;
 	border-radius: 12px;
@@ -4431,14 +4431,14 @@
 	right: -12px;
   }
 }
-/*======================================
+======================================
    End Chat & Email CSS
-========================================*/
+========================================
 
 
-/*======================================
+======================================
 	Profiles CSS
-========================================*/
+========================================
 .sherah-upcontent {
 
 }
@@ -4690,7 +4690,7 @@
 .sherah-upinner__column2 {
 	width: 70%;
 }
-/* End Profile Overview */
+ End Profile Overview 
 
 @media only screen and (min-width: 1279px) and (max-width: 1550px) {
 .sherah-pcats__list a {
@@ -4815,14 +4815,14 @@
 	height: 34px;
 }
 }
-/*======================================
+======================================
 	End Profiles CSS
-========================================*/
+========================================
 
 
-/*======================================
+======================================
    sherah Profiles CSS
-========================================*/
+========================================
 .sherah__item-switch {
 	position: relative;
 	display: inline-block;
@@ -4891,7 +4891,7 @@
 	content: "on";
 }
   
-  /* Rounded sliders */
+   Rounded sliders 
   .sherah__item-switch--round {
 	border-radius: 34px;
   }
@@ -6324,14 +6324,14 @@ blockquote {
 	margin-left: initial;
 }
 }
-/*======================================
+======================================
 	End sherah Profiles CSS
-========================================*/
+========================================
 
 
-/*======================================
+======================================
 	Forms CSS
-========================================*/
+========================================
 .sherah-wc__full {
 	position: relative;
 	height: 100vh;
@@ -6369,7 +6369,7 @@ blockquote {
 	background-position: center;
 	background-repeat: no-repeat;
 }
-/* Welcome Form */
+ Welcome Form 
 .sherah-wc__form {
 	display: flex;
 	flex-direction: column;
@@ -6417,7 +6417,7 @@ blockquote {
 	justify-content: space-between;
 	gap: 20px;
 }
-/* sherah Form */
+ sherah Form 
 .sherah-wc__form-main {
 	padding: 20px 25px;
 	border-bottom-right-radius: 12px;
@@ -6595,7 +6595,7 @@ blockquote {
   .sherah-wc-col-two {
 	width: 56%;
   }
-/* Verify Form */
+ Verify Form 
 .sherah-wc__form-verify {
 	margin: 0;
 	padding: 0;
@@ -6641,7 +6641,7 @@ blockquote {
 .sherah-wc__button-forget {
 	margin-top: 25px;
 }
-/* Update Password */
+ Update Password 
 .sherah-wc__middle-update {
 	display: flex;
 	justify-content: center;
@@ -6736,13 +6736,13 @@ blockquote {
 		font-size: 22px;
 	}
 }
-/*======================================
+======================================
 	End Forms CSS
-========================================*/
+========================================
 
-/*======================================
+======================================
 	Utilities CSS
-========================================*/
+========================================
 
 .sherah-order-card {
 	gap: 35px;
@@ -6878,8 +6878,8 @@ blockquote {
 }
 .sherah-main-form__options {
     display: flex;
-   /*! align-items: center;
-    */
+   ! align-items: center;
+    
     gap: 10px;
 }
 .sherah-main-form__button {
@@ -7209,7 +7209,7 @@ blockquote {
 	padding: 30px;
 	border-radius: 5px;
 }
-/* sherah Sidebar */
+ sherah Sidebar 
 .sherah-sidebarmenu {
     z-index: 999999;
     background: #FFFFFF;
@@ -7556,7 +7556,7 @@ blockquote {
 .sherah-email-list__single.sherah-email-list__single--spam::before {
     background: #27AE60;
 }
-/* 404 Error */
+ 404 Error 
 .sherah-error {
     display: flex;
     flex-direction: column;
@@ -7581,7 +7581,7 @@ blockquote {
     color: #2F3032;
     letter-spacing: 0.16em;
 }
-/* Coming Soon */
+ Coming Soon 
 .sherah-error__comming .sherah-error__text {
     color: #9AA2B1;
     letter-spacing: initial;
@@ -7760,7 +7760,7 @@ blockquote {
 	}
 }
 
-/* Language */
+ Language 
 .sherah-language-form {
 	background: #F0F3F8;
 	padding: 20px 30px;
@@ -7794,7 +7794,7 @@ blockquote {
 
 
 
-/* Page Content */
+ Page Content 
   .sherah-basic-page h1,
   .sherah-basic-page h2,
   .sherah-basic-page h3,
@@ -7851,7 +7851,7 @@ blockquote {
 	font-style: italic;
 }
 
-/* Customers */
+ Customers 
 
 
 .sherah-upcard__thumb {
@@ -7987,7 +7987,7 @@ blockquote {
 }
 }
 
-/* Shera Invoice */
+ Shera Invoice 
 .sherah-invoice-header {
 	display: flex;
 	justify-content: space-between;
@@ -8024,6 +8024,6 @@ blockquote {
 .sherah-print-template {
 	background: #fff;
 }
-/*======================================
+======================================
 	End Utilities CSS
-========================================*/
+========================================
