@@ -13,9 +13,21 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Giả sử đang xem profile của user_id=2 (có thể thay bằng session)
-        int userId = Integer.parseInt(request.getParameter("id"));
+
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("userId") == null) {
+            response.sendRedirect("login.jsp");
+            return;
+        }
+
+        int userId = (int) session.getAttribute("userId");
         User user = userDAO.getUserById(userId);
+
+        if (user == null) {
+            response.getWriter().println("User not found!");
+            return;
+        }
+
         request.setAttribute("user", user);
         request.getRequestDispatcher("profile.jsp").forward(request, response);
     }
@@ -23,7 +35,14 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("userId"));
+
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("userId") == null) {
+            response.sendRedirect("login.jsp");
+            return;
+        }
+
+        int id = (int) session.getAttribute("userId");
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
@@ -37,6 +56,6 @@ public class ProfileServlet extends HttpServlet {
         u.setAccountBalance(balance);
 
         userDAO.updateUser(u);
-        response.sendRedirect("ProfileServlet?id=" + id);
+        response.sendRedirect("ProfileServlet");
     }
 }
