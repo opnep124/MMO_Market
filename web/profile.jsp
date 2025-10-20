@@ -34,6 +34,8 @@ button { padding:10px 15px; margin-top:10px; cursor:pointer; background:#28a745;
 
         <label>Số Điện Thoại:</label>
         <input type="text" name="phone" value="<%= user.getPhone() %>" readonly>
+        <div id="phoneError" style="color:red; font-size:0.9em; margin-top:4px;"></div>
+
 
         <button type="button" id="editBtn">Chỉnh sửa</button>
         <button type="submit" id="saveBtn" style="display:none;">Lưu Thay Đổi</button>
@@ -57,7 +59,28 @@ editBtn.onclick = function() {
     editBtn.style.display = 'none';
     saveBtn.style.display = 'inline-block';
 };
+
+// Validate số điện thoại
+const form = document.getElementById('profileForm');
+const phoneErrorDiv = document.getElementById('phoneError');
+
+form.addEventListener('submit', function(event) {
+    const phoneInput = form.querySelector('input[name="phone"]');
+    const phone = phoneInput.value.trim();
+
+    const phoneRegex = /^0\d{8,9}$/;
+
+    if (!phoneRegex.test(phone)) {
+        phoneErrorDiv.textContent = 'Số điện thoại không hợp lệ! Vui lòng nhập 9-10 chữ số và bắt đầu bằng số 0.';
+        phoneInput.focus();
+        event.preventDefault(); // ngăn form submit
+    } else {
+        phoneErrorDiv.textContent = ''; // xóa thông báo nếu hợp lệ
+    }
+});
+
 </script>
+
 
 <jsp:include page="footer.jsp" />
 
