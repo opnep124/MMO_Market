@@ -23,7 +23,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("userId", user.getUserId());
             session.setAttribute("username", user.getLogin());
             session.setAttribute("roleId", user.getRoleId());
-            response.sendRedirect("ProfileServlet");
+            response.sendRedirect("HomeServlet");
         } else {
             request.setAttribute("errorMessage", "Login failed! Email or password incorrect.");
             request.getRequestDispatcher("login.jsp").forward(request, response);
