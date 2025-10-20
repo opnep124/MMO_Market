@@ -46,6 +46,14 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     String email = request.getParameter("email");
     String phone = request.getParameter("phone");
 
+        // Server-side validation số điện thoại
+    if (phone == null || !phone.matches("^0\\d{9,10}$")) {
+        request.setAttribute("errorMessage", "Số điện thoại không hợp lệ!");
+        request.setAttribute("user", userDAO.getUserById(id));
+        request.getRequestDispatcher("profile.jsp").forward(request, response);
+        return;
+    }
+    
     User u = new User();
     u.setUserId(id);
     u.setName(name);

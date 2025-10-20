@@ -1,24 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="vi">
 <head>
-    <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="Site keywords here">
-    <meta name="description" content="#">
+    <meta name="keywords" content="MMO Market">
+    <meta name="description" content="Trang đăng nhập MMO Market">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- Site Title -->
-    <title>Sherah - HTML eCommerce Dashboard Template</title>
+    <title>MMO Market - Đăng nhập</title>
 
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet"> 
-
-    <!-- Fav Icon -->
+    <!-- Fonts & CSS gốc Sherah -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
     <link rel="icon" href="img/favicon.png">
-    
-    <!-- Sherah Stylesheet -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome-all.min.css">
     <link rel="stylesheet" href="css/charts.min.css">
@@ -28,105 +21,134 @@
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Icon mắt mật khẩu */
+        #togglePassword {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #999;
+        }
+    </style>
 </head>
 <body id="sherah-dark-light">
 
-    <section class="sherah-wc sherah-wc__full sherah-bg-cover" style="background-image: url('img/credential-bg.svg');">
-        <div class="container-fluid p-0">
-            <div class="row g-0">
-                <div class="col-lg-6 col-md-6 col-12 sherah-wc-col-one">
-                    <div class="sherah-wc__inner" style="background-image: url('img/welcome-bg.png');">
-                        <!-- Logo -->
-                        <div class="sherah-wc__logo">
-                            <a href="index.html"><img src="img/logo.png" alt="#"></a>
-                        </div>
-                        <!-- Middle Image -->
-                        <div class="sherah-wc__middle">
-                            <a href="index.html"><img src="img/welcome-vector.png" alt="#"></a>
-                        </div>
-                        <!-- Welcome Heading -->
-                        <h2 class="sherah-wc__title">Welcome to Sherah eCommerce <br> Admin Panel</h2>
+<section class="sherah-wc sherah-wc__full sherah-bg-cover" style="background-image: url('img/credential-bg.svg');">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Trái -->
+            <div class="col-lg-6 col-md-6 col-12 sherah-wc-col-one">
+                <div class="sherah-wc__inner" style="background-image: url('img/welcome-bg.png');">
+                    <div class="sherah-wc__logo">
+                        <a href="HomeServlet" style="color:#fff; font-size:28px; font-weight:bold; text-decoration:none;">MMO Market</a>
                     </div>
+                    <div class="sherah-wc__middle">
+                        <a href="HomeServlet"><img src="img/welcome-vector.png" alt="#"></a>
+                    </div>
+                    <h2 class="sherah-wc__title">Chào mừng đến MMO Market <br> Bảng điều khiển</h2>
                 </div>
-                <div class="col-lg-6 col-md-6 col-12 sherah-wc-col-two">
-                    <div class="sherah-wc__form">
-                        <div class="sherah-wc__form-inner">
-                            <h3 class="sherah-wc__form-title sherah-wc__form-title__one">
-                                Login Your Account 
-                                <span>Please enter your email and password to continue</span>
-                            </h3>
-                            <!-- Sign in Form -->
-                            <form class="sherah-wc__form-main p-0" action="LoginServlet" method="post">
+            </div>
 
-                                <div class="form-group">
-                                    <label class="sherah-wc__form-label">Email Address</label>
-                                    <div class="form-group__input">
-                                        <input class="sherah-wc__form-input" type="email" name="email" placeholder="demo3243@gmail.com" required="required">
+            <!-- Phải -->
+            <div class="col-lg-6 col-md-6 col-12 sherah-wc-col-two">
+                <div class="sherah-wc__form">
+                    <div class="sherah-wc__form-inner">
+                        <h3 class="sherah-wc__form-title sherah-wc__form-title__one">
+                            Đăng nhập tài khoản 
+                            <span>Vui lòng nhập email và mật khẩu để tiếp tục</span>
+                        </h3>
+
+                        <!-- Form đăng nhập -->
+                        <form class="sherah-wc__form-main p-0" action="LoginServlet" method="post">
+
+                            <div class="form-group">
+                                <label class="sherah-wc__form-label">Email</label>
+                                <div class="form-group__input">
+                                    <input class="sherah-wc__form-input" type="email" name="email" placeholder="example@gmail.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sherah-wc__form-label">Mật khẩu</label>
+                                <div class="form-group__input" style="position:relative;">
+                                    <input class="sherah-wc__form-input" id="password-field" type="password" name="password" 
+                                           placeholder="••••••••" maxlength="20" required>
+                                    <span class="fa fa-eye" id="togglePassword"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="sherah-wc__check-inline">
+                                    <div class="sherah-wc__checkbox">
+                                        <input class="sherah-wc__form-check" id="remember" name="remember" type="checkbox">
+                                        <label for="remember">Ghi nhớ tài khoản</label>
+                                    </div>
+                                    <div class="sherah-wc__forgot">
+                                        <a href="forgot-password.html" class="forgot-pass">Quên mật khẩu?</a>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label class="sherah-wc__form-label">Password</label>
-                                    <div class="form-group__input">
-                                        <input class="sherah-wc__form-input" id="password-field" type="password" name="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" maxlength="8" required="required">
-                                    </div>
+                            <% if (request.getAttribute("errorMessage") != null) { %>
+                                <div style="color:red; margin-bottom:10px; text-align:center;">
+                                    <%= request.getAttribute("errorMessage") %>
                                 </div>
+                            <% } %>
 
-                                <div class="form-group">
-                                    <div class="sherah-wc__check-inline">
-                                        <div class="sherah-wc__checkbox">
-                                            <input class="sherah-wc__form-check" id="checkbox" name="checkbox" type="checkbox">
-                                            <label for="checkbox">Remember me later</label>
-                                        </div>
-                                        <div class="sherah-wc__forgot">
-                                            <a href="forgot-password.html" class="forgot-pass">Forget Password?</a>
-                                        </div>
-                                    </div>
+                            <div class="form-group form-mg-top25">
+                                <div class="sherah-wc__button sherah-wc__button--bottom">
+                                    <button class="ntfmax-wc__btn" type="submit">Đăng nhập</button>
                                 </div>
+                            </div>
 
-                                <!-- Display login error if exists -->
-                                <% if (request.getAttribute("errorMessage") != null) { %>
-                                    <div style="color:red; margin-bottom:10px; text-align:center;">
-                                        <%= request.getAttribute("errorMessage") %>
-                                    </div>
-                                <% } %>
-
-                                <div class="form-group form-mg-top25">
-                                    <div class="sherah-wc__button sherah-wc__button--bottom">
-                                        <button class="ntfmax-wc__btn" type="submit">Login</button>
-                                    </div>
+                            <div class="form-group mg-top-20">
+                                <div class="sherah-wc__bottom">
+                                    <p class="sherah-wc__text">Chưa có tài khoản? <a href="create-account.html">Đăng ký</a></p>
                                 </div>
+                            </div>
 
-                                <div class="form-group mg-top-20">
-                                    <div class="sherah-wc__bottom">
-                                        <p class="sherah-wc__text">Dont’t have an account? <a href="create-account.html">Sign up free</a></p>
-                                    </div>
-                                </div>
+                        </form>
+                        <!-- End Form đăng nhập -->
 
-                            </form>  
-                            <!-- End Sign in Form -->
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- sherah Scripts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/charts.js"></script>
-    <script src="js/final-countdown.min.js"></script>
-    <script src="js/fancy-box.min.js"></script>
-    <script src="js/fullcalendar.min.js"></script>
-    <script src="js/datatables.min.js"></script> 
-    <script src="js/circle-progress.min.js"></script>
-    <script src="js/jquery-jvectormap.js"></script>
-    <script src="js/jvector-map.js"></script>
-    <script src="js/main.js"></script>
+<!-- Scripts Sherah -->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-migrate.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/final-countdown.min.js"></script>
+<script src="js/fancy-box.min.js"></script>
+<script src="js/fullcalendar.min.js"></script>
+<script src="js/datatables.min.js"></script> 
+<script src="js/circle-progress.min.js"></script>
+<script src="js/jquery-jvectormap.js"></script>
+<script src="js/jvector-map.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Script con mắt mật khẩu -->
+<script>
+const togglePassword = document.getElementById("togglePassword");
+const passwordField = document.getElementById("password-field");
+
+togglePassword.addEventListener("click", function(){
+    const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+    passwordField.setAttribute("type", type);
+    this.classList.toggle("fa-eye-slash");
+});
+
+
+</script>
 
 </body>
 </html>
