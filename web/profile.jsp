@@ -47,6 +47,7 @@ const editBtn = document.getElementById('editBtn');
 const saveBtn = document.getElementById('saveBtn');
 const formInputs = document.querySelectorAll('#profileForm input');
 
+// bật chỉnh sửa các field khi nhấn "Chỉnh sửa"
 editBtn.onclick = function() {
     // bật readonly = false cho các input ngoại trừ email
     formInputs.forEach(input => {

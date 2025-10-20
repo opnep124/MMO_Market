@@ -85,7 +85,8 @@
                             <div class="form-group">
                                 <div class="sherah-wc__check-inline">
                                     <div class="sherah-wc__checkbox">
-                                        <input class="sherah-wc__form-check" id="remember" name="remember" type="checkbox">
+                                        <input class="sherah-wc__form-check" id="remember" name="remember" type="checkbox"
+                                            <%= "checked".equals(request.getAttribute("rememberChecked")) ? "checked" : "" %>>
                                         <label for="remember">Ghi nhớ tài khoản</label>
                                     </div>
                                     <div class="sherah-wc__forgot">

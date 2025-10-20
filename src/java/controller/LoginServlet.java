@@ -25,7 +25,8 @@ public class LoginServlet extends HttpServlet {
         if (user == null) {
             // Email không tồn tại → giữ mật khẩu, xóa email
             request.setAttribute("errorMessage", "Email không tồn tại!");
-            request.setAttribute("passwordValue", password); // có thể giữ password
+            request.setAttribute("passwordValue", password);
+            request.setAttribute("rememberChecked", rememberMe != null ? "checked" : "");
             request.getRequestDispatcher("login.jsp").forward(request, response);
             return;
         }
@@ -45,6 +46,7 @@ public class LoginServlet extends HttpServlet {
             // Sai mật khẩu → giữ email, xóa password
             request.setAttribute("errorMessage", "Mật khẩu không đúng!");
             request.setAttribute("emailValue", email);
+            request.setAttribute("rememberChecked", rememberMe != null ? "checked" : "");
             request.getRequestDispatcher("login.jsp").forward(request, response);
             return;
         }
@@ -68,6 +70,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         // Kiểm tra session
         HttpSession session = request.getSession(false);
         if (session != null && session.getAttribute("userId") != null) {
@@ -88,6 +91,8 @@ public class LoginServlet extends HttpServlet {
                             session.setAttribute("userId", user.getUserId());
                             session.setAttribute("username", user.getLogin());
                             session.setAttribute("roleId", user.getRoleId());
+                            request.setAttribute("emailValue", user.getEmail()); // điền email tự động
+                            request.setAttribute("rememberChecked", "checked");
                             response.sendRedirect("HomeServlet");
                             return;
                         }
