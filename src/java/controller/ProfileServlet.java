@@ -10,6 +10,8 @@ import java.math.BigDecimal;
 public class ProfileServlet extends HttpServlet {
     private UserDAO userDAO = new UserDAO();
 
+    
+    // GET request: hiển thị thông tin profile
    @Override
 protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
@@ -31,6 +33,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
     request.getRequestDispatcher("profile.jsp").forward(request, response);
 }
 
+// POST request: cập nhật thông tin profile
 @Override
 protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
