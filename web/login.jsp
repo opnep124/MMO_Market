@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>MMO Market - Đăng nhập</title>
 
-    <!-- Fonts & CSS gốc Sherah -->
+    <!-- Fonts & CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
     <link rel="icon" href="img/favicon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -67,7 +67,8 @@
                             <div class="form-group">
                                 <label class="sherah-wc__form-label">Email</label>
                                 <div class="form-group__input">
-                                    <input class="sherah-wc__form-input" type="email" name="email" placeholder="example@gmail.com" required>
+                                    <input class="sherah-wc__form-input" type="email" name="email" placeholder="example@gmail.com"
+                                           value="<%= request.getAttribute("emailValue") != null ? request.getAttribute("emailValue") : "" %>" required>
                                 </div>
                             </div>
 
@@ -75,7 +76,8 @@
                                 <label class="sherah-wc__form-label">Mật khẩu</label>
                                 <div class="form-group__input" style="position:relative;">
                                     <input class="sherah-wc__form-input" id="password-field" type="password" name="password" 
-                                           placeholder="••••••••" maxlength="20" required>
+                                           placeholder="••••••••" maxlength="20"
+                                           value="<%= request.getAttribute("passwordValue") != null ? request.getAttribute("passwordValue") : "" %>" required>
                                     <span class="fa fa-eye" id="togglePassword"></span>
                                 </div>
                             </div>
@@ -106,7 +108,7 @@
 
                             <div class="form-group mg-top-20">
                                 <div class="sherah-wc__bottom">
-                                    <p class="sherah-wc__text">Chưa có tài khoản? <a href="create-account.html">Đăng ký</a></p>
+                                    <p class="sherah-wc__text">Chưa có tài khoản? <a href="register.jsp">Đăng ký</a></p>
                                 </div>
                             </div>
 
@@ -120,7 +122,7 @@
     </div>
 </section>
 
-<!-- Scripts Sherah -->
+<!-- Scripts -->
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-migrate.js"></script>
 <script src="js/popper.min.js"></script>
@@ -146,8 +148,6 @@ togglePassword.addEventListener("click", function(){
     passwordField.setAttribute("type", type);
     this.classList.toggle("fa-eye-slash");
 });
-
-
 </script>
 
 </body>

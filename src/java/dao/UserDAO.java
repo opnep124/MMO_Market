@@ -16,6 +16,19 @@ public class UserDAO {
         } catch (SQLException e) { e.printStackTrace(); }
         return null;
     }
+    
+        // Lấy user theo login
+    public User getUserByLogin(String login) {
+        String sql = "SELECT * FROM Users WHERE login=?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, login);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) return mapUser(rs);
+            }
+        } catch (SQLException e) { e.printStackTrace(); }
+        return null;
+    }
 
     public User getUserById(int id) {
         String sql = "SELECT * FROM Users WHERE user_id=?";
@@ -57,4 +70,24 @@ public class UserDAO {
         u.setPassword(rs.getString("password"));
         return u;
     }
+    
+    public boolean insertUser(User u) {
+    String sql = "INSERT INTO Users (login, name, email, phone, password, role_id, account_balance, flag, createdAt, updatedAt) VALUES (?,?,?,?,?,?,?,?,NOW(),NOW())";
+    try (Connection conn = DBConnection.getConnection();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setString(1, u.getLogin());
+        ps.setString(2, u.getName());
+        ps.setString(3, u.getEmail());
+        ps.setString(4, u.getPhone());
+        ps.setString(5, u.getPassword());
+        ps.setInt(6, u.getRoleId());
+        ps.setBigDecimal(7, u.getAccountBalance());
+        ps.setBoolean(8, u.isFlag());
+        return ps.executeUpdate() > 0;
+    } catch(SQLException e){ e.printStackTrace(); }
+    return false;
+}
+    
+    
+
 }
